@@ -1,24 +1,34 @@
-import logo from './logo.svg';
+/* eslint-disable no-unused-vars */
+// import logo from './logo.svg';
 import './App.css';
+import { Body } from './components/Main/Body';
+import { AboutBody } from './components/About/AboutBody';
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Switch,
+  Link,
+  Routes,
+  Route,
+  BrowserRouter as Router
+
+} from "react-router-dom";
+import { Navbar } from './components/Main/Navbar';
+
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Router>
+        <Routes>
+          <Route path='/' element={<Body/>}></Route>
+          <Route path='/about' element={<AboutBody/>}></Route>
+        </Routes>
+      </Router>
+
+    </>
   );
 }
 
